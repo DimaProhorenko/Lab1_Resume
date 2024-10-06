@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-stone-100;
+  }
+
+  a:not([class]) {
+    /* @apply transition-colors hover:text-primary-400; */
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  input[type="color"] {
+    appearance: none;
+    background-color: transparent;
+    padding: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    position: relative;
+  }
+
+  input[type="color"]::-webkit-color-swatch,
+  input[type="color"]::-moz-color-swatch {
+    width: 80%;
+    height: 80%;
+    border-radius: inherit;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: 0;
+    translate: -50% -50%;
+  }
+
+  .tiptap {
+    min-height: 250px;
+    outline: none;
+  }
+}
+
+@layer components {
+  .spinner {
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    box-sizing: border-box;
+    animation: rotation 4s linear infinite;
+  }
+
+  @keyframes rotation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
+
+@layer utilities {
+  .mobile-menu-top {
+    clip-path: polygon(0 0, 0 83%, 100% 0);
+  }
+  .mobile-menu-bot {
+    clip-path: polygon(100% 100%, 0 100%, 100% 20%);
+  }
+}
